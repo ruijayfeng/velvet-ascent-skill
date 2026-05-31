@@ -1,6 +1,6 @@
 {
   "name": "@ruizhefeng/velvet-ascent-skill",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Chinese adult-oriented AI text GalGame agent skill with freeform roleplay, story memory, and novel export.",
   "license": "MIT",
   "type": "commonjs",
