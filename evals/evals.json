@@ -3,14 +3,14 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "开一个现代都市题材的自然流YY文字游戏，主角普通青年，想要大尺度爽文方向，但开局要温和自然一点。",
-      "expected_output": "The response should act as a Chinese GM, confirm or infer setup, generate three mild opening identity cards, and avoid abrupt explicit content while establishing gradual escalation.",
+      "prompt": "开一个现代都市成人向 GalGame，主角普通青年，NSFW档位3，想要爽文方向，但开局要温和自然一点。请先给我开局配置和3张身份卡。",
+      "expected_output": "The response should act as a Chinese GM, confirm adult-only consenting boundaries, acknowledge NSFW level 3 as a ceiling, generate three mild opening identity cards, and avoid abrupt explicit content while establishing gradual escalation.",
       "files": []
     },
     {
       "id": 2,
-      "prompt": "主题玄幻宗门，主角是刚入门的外门弟子。我要高度自由、后期可以有后宫争宠，但前几回合别太突兀，先从吸引力和机缘开始。",
-      "expected_output": "The response should start a Chinese turn-based fantasy game with gentle early pacing, plausible attraction/opportunity hooks, clear action options, and no forced harem or explicit scenes in the opening.",
+      "prompt": "主题玄幻宗门，主角是刚入门的外门弟子。我要高度自由、后期可以有后宫争宠，但前几回合别太突兀，先从吸引力和机缘开始。不要并行时间线。",
+      "expected_output": "The response should start a Chinese turn-based fantasy game with one active timeline, plausible attraction/opportunity hooks, clear action options, and no forced harem or unrelated parallel scene in the opening.",
       "files": []
     },
     {
@@ -27,20 +27,50 @@
     },
     {
       "id": 5,
-      "prompt": "继续都市线，我想让女邻居更主动一点，但不要变得突兀，也不要所有人都倒贴。给我一个有竞争感的随机事件。",
-      "expected_output": "The response should increase NPC initiative in a grounded way, preserve distinct NPC agency, avoid instant universal attraction, introduce a believable competitive random event, and provide four concrete options.",
+      "prompt": "继续都市线，我想让女邻居更主动一点，但不要变得突兀，也不要所有人都倒贴。给我一个有竞争感的场景扰动。",
+      "expected_output": "The response should increase NPC initiative in a grounded way, preserve distinct NPC agency, avoid instant universal attraction, introduce a believable scene disturbance tied to the current timeline, and provide four concrete options.",
       "files": []
     },
     {
       "id": 6,
-      "prompt": "这一段感情已经铺垫很多回合了，现在该直白就直白一点，不要全靠暗示，但要保持双方成年自愿、自然推进。",
-      "expected_output": "The response should increase directness through adult emotional intensity, concrete body language, dialogue, and consequences while preserving consent, character motivation, and continuity.",
+      "prompt": "这一段感情已经铺垫很多回合了，现在该直白就直白一点，不要全靠暗示，但要保持双方成年自愿、自然推进，并体现她自己的XP偏好。",
+      "expected_output": "The response should increase adult directness through character-specific desire, body language, dialogue, consent, and consequences while preserving continuity and the character's established taste profile.",
       "files": []
     },
     {
       "id": 7,
-      "prompt": "开启文档记忆模式。以后每回合都帮我整理故事文档，人物关系别忘。当前游戏结束后我要导出成完整小说。",
-      "expected_output": "The response should propose or create a multi-document memory workspace, explain the document responsibilities, track turn/chapter/character/relationship files, and support final novel export.",
+      "prompt": "开启文档记忆模式。以后每回合都帮我后台整理故事文档，人物关系、XP、时间线别忘。当前游戏结束后我要导出成完整小说。",
+      "expected_output": "The response should propose or create a multi-document memory workspace, include timeline tracking, explain backstage updates without slowing play, and support final novel export.",
+      "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "我觉得刚才剧情突然出现了两个时间线，完全接不上。帮我修复时间线，只保留当前主线继续。",
+      "expected_output": "The response should stop advancing the story, summarize the last stable point, list canonical facts, offer repair options, and avoid adding new plot events before timeline repair.",
+      "files": []
+    },
+    {
+      "id": 9,
+      "prompt": "开局生成3个成年女主，每个人都要有明显性格、说话方式、XP偏好、关系阻力和着装记忆点，不要都写成温柔倒贴。",
+      "expected_output": "The response should create distinct adult character seeds with personality hooks, speech habits, taste profiles, boundaries, resistance points, and scene-relevant clothing anchors without making them instantly devoted.",
+      "files": []
+    },
+    {
+      "id": 10,
+      "prompt": "开启女性向剧情。背景娱乐圈，女主是刚翻红的演员，给我3个成年男性角色路线，强调情绪张力、主动试探和关系竞争。",
+      "expected_output": "The response should switch to female-oriented route logic, keep protagonist agency central, generate three adult male route characters with distinct emotional pressure and flaws, and preserve consent boundaries.",
+      "files": []
+    },
+    {
+      "id": 11,
+      "prompt": "上一回合只是拥抱了一下，不要突然强行进入成人环节。根据人物关系继续暧昧推进，让她有自己的犹豫和主动。",
+      "expected_output": "The response should not treat a hug as automatic NSFW payoff; it should continue with believable tension, character agency, hesitation, consent-aware pacing, and relationship consequences.",
+      "files": []
+    },
+    {
+      "id": 12,
+      "prompt": "对话太僵硬了。继续当前暧昧场景，让林晚晴说话更符合她冷静克制但有控制欲的性格，不要只写短句。",
+      "expected_output": "The response should write more natural character-specific dialogue, preserve Lin Wanqing's established traits, reveal subtext and emotional defense, and avoid generic short flirtation lines.",
       "files": []
     }
   ]

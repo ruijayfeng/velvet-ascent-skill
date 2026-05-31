@@ -1,6 +1,10 @@
 # References
 
-Put longer guidance here only when `SKILL.md` would become too large or when the skill has domain-specific variants.
+`SKILL.md` is the lightweight dispatcher. These files hold longer rules that should be loaded only when relevant:
 
-Reference files should be loaded selectively. Name each file for the situation where it applies, for example `aws.md`, `docx.md`, or `review-rubric.md`.
+- `narrative-engine.md`: single-timeline scene progression, scene disturbance, options, timeline repair.
+- `character-engine.md`: memorable adult character cards, personality, XP/taste profiles, clothing anchors, dialogue, relationship progression.
+- `nsfw-style-guide.md`: NSFW levels, adult escalation, directness, female-oriented route handling, safety boundaries.
+- `memory-system.md`: document workspace, backstage updates, timeline file, context drift reminder, novel export.
 
+Keep reference files focused. If a future rule grows large, split it by responsibility rather than expanding `SKILL.md`.
