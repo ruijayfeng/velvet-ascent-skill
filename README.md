@@ -1,100 +1,133 @@
 # Velvet Ascent Skill
 
-`velvet-ascent` is a Codex skill for running a Chinese, turn-based, freeform text adventure GM with gradual narrative escalation, persistent story memory, relationship tracking, and optional novel export.
+`velvet-ascent` 是一个面向 Codex 的中文文字游戏 GM skill，用来运行高自由、回合制、自然升温的沉浸式文字冒险。
 
-The skill is designed for natural pacing: early turns stay grounded and emotionally suggestive, while later turns can become more dramatic as player choices, relationship history, and story stakes accumulate.
+它的核心目标不是让剧情一开局就失控，而是让角色关系、爽点、冲突和情绪随着玩家选择逐步积累：前期温和自然，中期关系升温，后期在已有铺垫上展开更强的爽文张力、关系竞争、系统成长和多线剧情。
 
-## Install
+## 特色
 
-Install the skill with npx:
+- **自然升温**：前几回合以吸引力、机缘、情绪铺垫为主，避免突兀升级。
+- **高自由回合制**：玩家可以选择选项，也可以随时输入自定义行动。
+- **关系网追踪**：维护 NPC 动机、好感、信任、竞争、误会和隐藏伏笔。
+- **多文档记忆系统**：支持把长期游戏拆成世界观、人物、关系、回合和章节文档，减少遗忘。
+- **小说导出**：游戏结束或阶段完成后，可整理为连续小说草稿。
+- **npx 一键安装**：发布在 npm，可直接安装到本地 skills 目录。
+
+## 安装
+
+使用 npx 安装：
 
 ```powershell
 npx @ruizhefeng/velvet-ascent-skill
 ```
 
-By default, the installer copies the skill to:
+默认安装到：
 
 ```text
 ~/.agents/skills/velvet-ascent
 ```
 
-Install to a custom skills directory:
+如果你的 skills 目录不同，可以指定目标路径：
 
 ```powershell
 npx @ruizhefeng/velvet-ascent-skill --target C:\Users\YourName\.agents\skills
 ```
 
-Restart Codex or reload skills after installation if the skill does not appear immediately.
+安装后如果 Codex 没有立刻识别到 skill，重启 Codex 或重新加载 skills。
 
-## Use
+## 快速开始
 
-After installation, ask Codex for a Chinese turn-based text adventure using natural YY-style escalation. Example prompts:
+安装后，可以这样开局：
 
 ```text
 开一个现代都市题材的自然流YY文字游戏，主角普通青年，想要爽文方向，但开局要温和自然一点。
 ```
 
+也可以指定世界观和节奏：
+
 ```text
 主题玄幻宗门，主角是刚入门的外门弟子。我要高度自由，后期可以有后宫争宠，但前几回合先从吸引力和机缘开始。
 ```
 
-Useful in-game commands include:
+如果你想开启长期剧情记忆：
+
+```text
+开启文档记忆模式。以后每回合都帮我整理故事文档，人物关系别忘。当前游戏结束后我要导出成完整小说。
+```
+
+## 游戏内命令
 
 - `查看系统面板`
 - `查看关系网`
 - `查看后宫状态`
 - `提高尺度`
 - `降低尺度`
+- `阶段总结`
 - `保存本回合`
 - `整理故事文档`
 - `导出小说`
 - `自定义行动：...`
 
-## Repository Layout
+## 适用场景
+
+这个 skill 适合以下需求：
+
+- 想让 Codex 长期扮演中文文字游戏 GM。
+- 想玩自由度高、回合推进、选择影响后续剧情的文字冒险。
+- 想要前期自然铺垫，后期逐渐提升爽感和关系张力。
+- 想让故事具备人物记忆、关系连续性和最终小说导出能力。
+
+不适合的场景：
+
+- 只想要一次性短篇故事。
+- 不需要持续状态、人物关系或多回合推进。
+- 想跳过铺垫，直接生成无上下文的极端内容。
+
+## 仓库结构
 
 ```text
 .
-├── SKILL.md              # Skill metadata and runtime instructions
-├── bin/install.js        # npx installer
-├── assets/               # Optional reusable assets
-├── references/           # Longer reference docs for the skill
-├── scripts/              # Optional helper scripts bundled with the skill
-├── evals/evals.json      # Development eval prompts, not included in npm package
-├── package.json          # npm package metadata
-├── README.md             # Project documentation
-└── LICENSE               # MIT license
+├── SKILL.md              # skill 元数据和运行规则
+├── bin/install.js        # npx 安装器
+├── assets/               # 可选素材目录
+├── references/           # 长参考文档目录
+├── scripts/              # 可选辅助脚本目录
+├── evals/evals.json      # 开发测试用例，不随 npm 包安装
+├── package.json          # npm 包元数据
+├── README.md             # 项目说明
+└── LICENSE               # MIT 许可证
 ```
 
-## Development
+## 本地开发
 
-Validate the installer locally:
+验证安装器：
 
 ```powershell
 node bin\install.js --help
 node bin\install.js --target .\tmp-skills
 ```
 
-Preview the npm package contents:
+预览 npm 发布内容：
 
 ```powershell
 npm pack --dry-run
 ```
 
-The npm package intentionally excludes `evals/`; evals are useful for development but not needed by end users.
+`evals/` 目录用于开发测试，不会包含在最终 npm 安装包里。
 
-## Publish
+## 发布
 
-Update the version in `package.json`, then publish:
+更新 `package.json` 里的版本号后发布：
 
 ```powershell
 npm publish --access public
 ```
 
-If npm requires two-factor authentication, complete the browser challenge or provide an OTP as prompted.
+如果 npm 要求双因素认证，按终端提示完成浏览器验证或输入 OTP。
 
-## Safety And Scope
+## 内容边界
 
-This skill is intended for fictional adult text adventure roleplay. It should keep romantic or intimate material adult, consensual, and tied to story progression. It is not designed for non-consensual, underage, exploitative, or illegal sexual content.
+这个 skill 面向虚构的成人文字冒险。它强调自然推进、成年角色、合意互动和故事后果，不用于生成未成年、非自愿、剥削性或违法性内容。
 
 ## License
 
