@@ -1,7 +1,7 @@
 {
   "name": "@ruizhefeng/velvet-ascent-skill",
   "version": "0.1.1",
-  "description": "One-command installer for the velvet-ascent agent skill, a Chinese adult-oriented freeform text GalGame GM.",
+  "description": "Chinese adult-oriented AI text GalGame agent skill with freeform roleplay, story memory, and novel export.",
   "license": "MIT",
   "type": "commonjs",
   "homepage": "https://github.com/ruijayfeng/velvet-ascent-skill#readme",
@@ -28,10 +28,17 @@
   },
   "keywords": [
     "agent-skill",
+    "ai-agent",
     "codex",
     "skill",
     "velvet-ascent",
     "galgame",
-    "text-adventure"
+    "visual-novel",
+    "interactive-fiction",
+    "text-adventure",
+    "roleplay",
+    "story-game",
+    "chinese",
+    "npx"
   ]
 }

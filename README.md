@@ -1,8 +1,13 @@
-# Velvet Ascent Skill
+# Velvet Ascent Skill - 成人向 AI 文字 GalGame 引擎
 
 `velvet-ascent` 是一个面向支持 skills 的 AI Agent 的中文成人向文字游戏 GM skill，用来运行类似“文字版自由 GalGame”的高自由、回合制、自然升温互动剧情。
 
 玩家可以通过自然语言和 AI 对话自由创建自己的游戏：指定世界观、主角身份、角色关系、剧情尺度、行动路线和长期记忆方式。它的核心目标不是让剧情一开局就失控，而是让角色关系、爽点、冲突和情绪随着玩家选择逐步积累：前期温和自然，中期关系升温，后期在已有铺垫上展开更强的成人向剧情张力、关系竞争、系统成长和多线剧情。
+
+[![npm version](https://img.shields.io/npm/v/@ruizhefeng/velvet-ascent-skill.svg)](https://www.npmjs.com/package/@ruizhefeng/velvet-ascent-skill)
+[![license](https://img.shields.io/github/license/ruijayfeng/velvet-ascent-skill.svg)](LICENSE)
+
+关键词：AI Agent skill、成人向文字游戏、自由 GalGame、中文互动小说、文字冒险、AI 剧情 GM、关系推进、故事记忆、小说导出。
 
 ## 特色
 
