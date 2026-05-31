@@ -1,7 +1,7 @@
 {
   "name": "@ruizhefeng/velvet-ascent-skill",
   "version": "0.1.1",
-  "description": "One-command installer for the velvet-ascent Codex skill.",
+  "description": "One-command installer for the velvet-ascent agent skill, a Chinese adult-oriented freeform text GalGame GM.",
   "license": "MIT",
   "type": "commonjs",
   "homepage": "https://github.com/ruijayfeng/velvet-ascent-skill#readme",
@@ -27,9 +27,11 @@
     "node": ">=18"
   },
   "keywords": [
+    "agent-skill",
     "codex",
     "skill",
     "velvet-ascent",
+    "galgame",
     "text-adventure"
   ]
 }
