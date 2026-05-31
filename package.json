@@ -1,0 +1,35 @@
+{
+  "name": "@ruizhefeng/velvet-ascent-skill",
+  "version": "0.1.1",
+  "description": "One-command installer for the velvet-ascent Codex skill.",
+  "license": "MIT",
+  "type": "commonjs",
+  "homepage": "https://github.com/ruijayfeng/velvet-ascent-skill#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruijayfeng/velvet-ascent-skill.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ruijayfeng/velvet-ascent-skill/issues"
+  },
+  "bin": {
+    "velvet-ascent-skill": "bin/install.js"
+  },
+  "files": [
+    "SKILL.md",
+    "assets",
+    "references",
+    "scripts",
+    "bin/install.js",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "codex",
+    "skill",
+    "velvet-ascent",
+    "text-adventure"
+  ]
+}

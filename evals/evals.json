@@ -1,0 +1,47 @@
+{
+  "skill_name": "velvet-ascent",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "开一个现代都市题材的自然流YY文字游戏，主角普通青年，想要大尺度爽文方向，但开局要温和自然一点。",
+      "expected_output": "The response should act as a Chinese GM, confirm or infer setup, generate three mild opening identity cards, and avoid abrupt explicit content while establishing gradual escalation.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "主题玄幻宗门，主角是刚入门的外门弟子。我要高度自由、后期可以有后宫争宠，但前几回合别太突兀，先从吸引力和机缘开始。",
+      "expected_output": "The response should start a Chinese turn-based fantasy game with gentle early pacing, plausible attraction/opportunity hooks, clear action options, and no forced harem or explicit scenes in the opening.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "继续上一回合，我选择自定义行动：先查看系统面板，然后主动帮新搬来的女孩搬行李，但保持礼貌，不要太油腻。",
+      "expected_output": "The response should respect the custom action, show a compact system panel only because requested, continue with natural courteous interaction, track light relationship changes, and offer four next actions.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "玩到第5回合了，查看后宫状态。如果现在还没到那一步，就给我关系网和阶段总结，然后自然提高一点尺度。",
+      "expected_output": "The response should avoid inventing a full harem too early, provide relationship network or harem status depending on accumulated context, summarize the stage, and raise intensity naturally without abrupt explicit content.",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "继续都市线，我想让女邻居更主动一点，但不要变得突兀，也不要所有人都倒贴。给我一个有竞争感的随机事件。",
+      "expected_output": "The response should increase NPC initiative in a grounded way, preserve distinct NPC agency, avoid instant universal attraction, introduce a believable competitive random event, and provide four concrete options.",
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "这一段感情已经铺垫很多回合了，现在该直白就直白一点，不要全靠暗示，但要保持双方成年自愿、自然推进。",
+      "expected_output": "The response should increase directness through adult emotional intensity, concrete body language, dialogue, and consequences while preserving consent, character motivation, and continuity.",
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "开启文档记忆模式。以后每回合都帮我整理故事文档，人物关系别忘。当前游戏结束后我要导出成完整小说。",
+      "expected_output": "The response should propose or create a multi-document memory workspace, explain the document responsibilities, track turn/chapter/character/relationship files, and support final novel export.",
+      "files": []
+    }
+  ]
+}
