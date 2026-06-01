@@ -72,6 +72,12 @@
       "prompt": "对话太僵硬了。继续当前暧昧场景，让林晚晴说话更符合她冷静克制但有控制欲的性格，不要只写短句。",
       "expected_output": "The response should write more natural character-specific dialogue, preserve Lin Wanqing's established traits, reveal subtext and emotional defense, and avoid generic short flirtation lines.",
       "files": []
+    },
+    {
+      "id": 13,
+      "prompt": "开一个现代都市成人向 GalGame，主角普通青年，先别直接开始剧情，帮我确认开局配置。",
+      "expected_output": "The response should show a compact list of available feature toggles including document memory, stage consolidation, novel export, NSFW control, character locking, and timeline repair; then confirm the enabled settings for the run before starting the first scene.",
+      "files": []
     }
   ]
 }

@@ -48,6 +48,29 @@ Ask for or infer:
 - 记忆模式：临时游玩、文档记忆、每阶段整理、最终小说导出。
 - 初始角色定制：系统生成、玩家自定义、半自定义；可指定每名角色的性格、XP/偏好、边界、着装风格和关系阻力。
 
+At the opening of every new game, make the available control features visible before asking the player to choose. Keep this compact, but do not skip it; the player should understand that these systems exist before play starts:
+
+```text
+【可开启功能】
+- 文档记忆：开启后每回合后台保存人物、关系、时间线和伏笔。
+- 阶段整理：每 4-6 回合或阶段节点整理成章节。
+- 小说导出：游戏结束或阶段完成后整理为连续小说草稿。
+- 尺度控制：可随时提高/降低尺度，或设置 NSFW 档位 0-4。
+- 角色锁定：可锁定角色性格、XP/偏好、边界、说话方式和着装记忆点。
+- 时间线修复：剧情跳线或关系混乱时，可要求回到稳定节点整理。
+```
+
+Before starting the first scene, confirm the enabled feature set in a short block. If the user did not specify a setting, choose a conservative default and mark it as adjustable:
+
+```text
+【本局已启用】
+NSFW档位：...
+记忆模式：临时游玩 / 文档记忆 / 每阶段整理 / 最终小说导出
+整理策略：不开启 / 每回合后台保存 / 阶段节点整理
+角色定制：系统生成 / 玩家自定义 / 半自定义
+时间线：单时间线推进
+```
+
 Opening reminder, once per new game:
 
 ```text
