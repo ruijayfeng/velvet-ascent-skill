@@ -1,5 +1,6 @@
 {
   "skill_name": "velvet-ascent",
+  "version": "0.2.0",
   "evals": [
     {
       "id": 1,
@@ -77,6 +78,41 @@
       "id": 13,
       "prompt": "开一个现代都市成人向 GalGame，主角普通青年，先别直接开始剧情，帮我确认开局配置。",
       "expected_output": "The response should show a compact list of available feature toggles including document memory, stage consolidation, novel export, NSFW control, character locking, and timeline repair; then confirm the enabled settings for the run before starting the first scene.",
+      "files": []
+    },
+    {
+      "id": 14,
+      "name": "0.2-harem-formation-6-stage-path",
+      "prompt": "开一个现代都市后宫养成文字游戏，主角普通青年，NSFW 档位 2。开局先给我 3 个身份卡 + 2 个已经跑过差异化矩阵自检的角色卡，每个角色都要写明当前养成阶段。",
+      "expected_output": "GM 给出【可开启功能】+【本局已启用】块；3 张身份卡（身份名称/初始处境/核心优势/潜在关系线/成人向剧情钩子/初始风险/推荐 NSFW 档位）；2 个角色卡（身份/第一印象/视觉锚点/性格钩子/情感防御/说话风格/性癖谱 3 项含触发-反应-tell/性癖互动库/欲望立场含显性度/关系阻力源/养成阶段/差异化矩阵 6 维自检）。两位角色的差异化矩阵自检结果应明确不重复 3 维以上，且关系阻力源类型不同。",
+      "files": []
+    },
+    {
+      "id": 15,
+      "name": "0.2-desire-dimension-annotation",
+      "prompt": "继续刚才的现代都市游戏。当前林晚晴处于'试探'阶段，设定她偏好'被命令'和'被看着'。本回合我用选项 1 推进她的欲望显性度。",
+      "expected_output": "GM 在 7 段回合格式中输出【欲望维度注记】段；该注记明确指出林晚晴的哪个性癖被触发（'被命令'还是'被看着'）、欲望立场显性度从'潜意识'上移到'情绪感知'或更高；不超出档位 × 阶段上限（档位 2 / 试探阶段上限 = 2）；引用性癖互动库中的具体反应序列。",
+      "files": []
+    },
+    {
+      "id": 16,
+      "name": "0.2-female-oriented-touch-priority",
+      "prompt": "切换到女性向剧情。女主 28 岁演员，男主 30 岁导演，两人第一次在试镜后共处一室，男主主动靠近。",
+      "expected_output": "GM 输出女性向回合格式：主线推进含 3 层（关系/他的欲望显性化/她的感受）；欲望维度注记展开 5 维细腻性（触觉层含温度/力度/节奏/接触面积/衣物介入/部位敏感度；视觉与凝视；听觉；心理；主动权）；女主的主动权体现（她可以调整/表达/拒绝/发起/改变场景）；不滑入'为他存在'的模式；不机械罗列身体部位。",
+      "files": []
+    },
+    {
+      "id": 17,
+      "name": "0.2-level-stage-cross-constraint",
+      "prompt": "档位 4 模式下暧昧阶段的角色。本回合我想推到她。",
+      "expected_output": "GM 拒绝按档位 4 写本回合——档位 4 > 暧昧阶段上限 3；要么先推进阶段（按 6 阶段路径，每阶段进入条件要满足），要么按档位 3 写，并在欲望维度注记中说明这是档位 × 阶段矩阵的硬约束。绝不为了'档位 4'而强行跳过阶段。",
+      "files": []
+    },
+    {
+      "id": 18,
+      "name": "0.2-6-dim-matrix-no-template",
+      "prompt": "我已经在都市线跑了 8 回合。系统想让我加一个第 3 个后宫角色：女上司。请生成她的完整卡，并跑差异化矩阵自检证明她不与现有两位角色撞模板。",
+      "expected_output": "GM 输出新角色的完整卡（6 维差异化矩阵自检明确列出 6 维与现有两位角色的相似度，每维 < 60%）；关系阻力源类型与现有两位不同（不能都是'性格克制'或'第三方存在'）；性癖组合 3-5 项具体可观察；欲望立场对主角 + 对现有两位后宫角色都要写；养成阶段初始为'路人'或'吸引'（不能开局就'暧昧'或更高）。",
       "files": []
     }
   ]
