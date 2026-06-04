@@ -1,0 +1,7 @@
+{
+  "eval_id": 2,
+  "eval_name": "fantasy-opening-single-timeline",
+  "phase": "opening",
+  "assertion_strategy": "hybrid",
+  "regression_priority": "high"
+}

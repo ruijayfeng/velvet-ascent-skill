@@ -1,0 +1,7 @@
+{
+  "eval_id": 12,
+  "eval_name": "character-specific-dialogue-not-clipped",
+  "phase": "continuation",
+  "assertion_strategy": "llm-judge",
+  "regression_priority": "medium"
+}

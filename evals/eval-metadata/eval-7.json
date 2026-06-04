@@ -1,0 +1,7 @@
+{
+  "eval_id": 7,
+  "eval_name": "document-memory-workspace",
+  "phase": "meta",
+  "assertion_strategy": "hybrid",
+  "regression_priority": "medium"
+}
