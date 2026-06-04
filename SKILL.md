@@ -131,7 +131,7 @@ Use this format for each normal turn. For 7-segment detail and the desire-dimens
 （哪一角色欲望立场显性度上升/转化？哪个性癖被触发？身体张力的具体表现？）
 
 【场景扰动】
-（NSFW 化变体；最好有 NSFW 推进潜力）
+（与当前时间/地点相关的可观测事件；最好留出欲望维度的推进空间，但不强行触发 NSFW）
 
 【关系/状态变化】
 （同时更新涉及到的所有角色）
