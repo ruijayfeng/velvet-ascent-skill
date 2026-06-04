@@ -2,6 +2,6 @@
   "eval_id": 1,
   "eval_name": "opening-configuration",
   "phase": "opening",
-  "assertion_strategy": "hybrid",
+  "assertion_strategy": "llm-judge",
   "regression_priority": "high"
 }
