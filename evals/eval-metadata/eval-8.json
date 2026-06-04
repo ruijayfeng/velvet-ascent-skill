@@ -2,6 +2,6 @@
   "eval_id": 8,
   "eval_name": "timeline-repair-stops-advancement",
   "phase": "meta",
-  "assertion_strategy": "llm-judge",
+  "assertion_strategy": "hybrid",
   "regression_priority": "high"
 }

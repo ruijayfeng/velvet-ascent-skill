@@ -1,6 +1,6 @@
 {
-  "eval_id": 5,
-  "eval_name": "raise-initiatives-without-instant-devotion",
+  "eval_id": 18,
+  "eval_name": "0.2-6-dim-matrix-no-template",
   "phase": "continuation",
   "assertion_strategy": "hybrid",
   "regression_priority": "high"

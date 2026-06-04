@@ -1,0 +1,7 @@
+{
+  "eval_id": 17,
+  "eval_name": "0.2-level-stage-cross-constraint",
+  "phase": "escalation",
+  "assertion_strategy": "hybrid",
+  "regression_priority": "high"
+}
