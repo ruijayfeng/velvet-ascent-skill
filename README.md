@@ -157,42 +157,11 @@ velvet-ascent-runs/
 </details>
 
 <details>
-<summary>🛠️ 仓库结构 / 本地开发 / 发布</summary>
+<summary>🛠️ 仓库结构 / 发布</summary>
 
-**仓库结构**
+仓库结构：`SKILL.md` · `bin/install.js` · `references/` · `assets/` · `scripts/` · `evals/`（开发用，不打包）· `package.json` · `README.md` · `LICENSE`
 
-```text
-.
-├── SKILL.md              # skill 元数据和运行规则
-├── bin/install.js        # npx 安装器
-├── assets/               # README 封面和可选素材
-├── references/           # 长参考文档目录
-├── scripts/              # 可选辅助脚本目录
-├── evals/evals.json      # 开发测试用例，不随 npm 包安装
-├── package.json          # npm 包元数据
-├── README.md             # 项目说明
-└── LICENSE               # MIT 许可证
-```
-
-**本地开发**
-
-```powershell
-node bin\install.js --help
-node bin\install.js --target .\tmp-skills
-npm pack --dry-run
-```
-
-`evals/` 目录用于开发测试，不会包含在最终 npm 安装包里。
-
-**发布**
-
-更新 `package.json` 里的版本号后发布：
-
-```powershell
-npm publish --access public
-```
-
-如果 npm 要求双因素认证，按终端提示完成浏览器验证或输入 OTP。
+发布：`npm version patch && npm publish --access public`（2FA 按终端提示）
 </details>
 
 ## 内容边界
