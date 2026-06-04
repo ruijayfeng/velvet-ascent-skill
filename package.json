@@ -27,7 +27,7 @@
     "node": ">=18"
   },
   "scripts": {
-    "test": "node --test"
+    "test": "node --test && node scripts/run-assertions.js"
   },
   "keywords": [
     "agent-skill",
