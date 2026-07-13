@@ -1,0 +1,673 @@
+{
+  "skill_summary": {
+    "name": "velvet-ascent",
+    "title": "Velvet Ascent - 中文成人向后宫养成文字游戏引擎",
+    "display_name": "Velvet Ascent - 中文成人向后宫养成文字游戏引擎",
+    "description": "Use this skill when the user wants a Chinese adult-oriented turn-based text GalGame GM with harem formation, freeform narrative roleplay, natural-escalation yellow-fiction text adventure, multi-character relationship drama, story memory, or novel export. Trigger on requests for 后宫养成, 后宫, 养成, 多女主, 多男后宫, 黄色爽文, 自然流YY文字游戏, 成人向文字冒险, 回合制文字冒险, GalGame, 后宫互动, 逐步升温剧情, 暧昧开局, 自定义身份卡, 文档记忆, 小说导出, 女性向剧情, or any Chinese freeform narrative game where the user wants adult consenting characters, gradual escalation, strong character routes, and long-running continuity. Use this skill even when the user does not name it explicitly but describes a multi-character adult Chinese interactive fiction with relationship memory and NSFW progression.",
+    "maturity": "scaffold",
+    "updated_at": "2026-07-13",
+    "core_value": "把一次性经验沉淀为可复用、可评估、可迁移的 Skill 包体。",
+    "audience": "Skill 作者、复用团队和后续 reviewer。",
+    "deliverables": [
+      "SKILL.md",
+      "agents/interface.yaml",
+      "reports/skill-ir.json",
+      "reports/compiled_targets.md",
+      "reports/output_quality_scorecard.md",
+      "reports/conformance_matrix.md",
+      "reports/security_trust_report.md",
+      "reports/skill_atlas.html",
+      "reports/registry_audit.md",
+      "reports/package_verification.md",
+      "reports/install_simulation.md",
+      "reports/upgrade_check.md",
+      "reports/adoption_drift_report.md",
+      "reports/review_waivers.md",
+      "reports/review_annotations.md",
+      "reports/review-studio.html",
+      "reports/skill-interpretation.html",
+      "reports/skill-overview.html",
+      "reports/skill-interpretation.json"
+    ],
+    "flow": [
+      "输入材料",
+      "Skill 包体",
+      "可复用能力"
+    ]
+  },
+  "scorecard": {
+    "completeness_score": {
+      "label": "完整度",
+      "score": 58,
+      "reasons": [
+        "SKILL.md 已存在，是 Skill 的入口。",
+        "README.md 已存在，便于人工阅读。",
+        "agents/interface.yaml 未发现或为空，完整度扣分。",
+        "manifest.json 未发现或为空，完整度扣分。",
+        "reports 未发现或为空，完整度扣分。"
+      ]
+    },
+    "trigger_score": {
+      "label": "触发清晰",
+      "score": 85,
+      "reasons": [
+        "frontmatter description 已存在，具备基础路由面。",
+        "description 有足够长度说明任务边界。",
+        "description 已包含使用场景或排除边界信号。",
+        "evals/ 已存在，可承载触发样例或质量检查。",
+        "intent-confidence 证据不足。"
+      ]
+    },
+    "evidence_score": {
+      "label": "证据充分",
+      "score": 0,
+      "reasons": [
+        "证据不足：缺少 skill-ir.json, compiled_targets.json, intent-dialogue.json。"
+      ]
+    },
+    "maintainability_score": {
+      "label": "可维护性",
+      "score": 80,
+      "reasons": [
+        "SKILL.md 约 2841 个词/字。",
+        "入口文件偏长，建议继续拆到 references/。",
+        "references/ 已承载扩展指导。",
+        "scripts/ 已承载确定性逻辑。",
+        "evals/ 已承载可迁移检查。"
+      ]
+    },
+    "portability_score": {
+      "label": "可迁移性",
+      "score": 15,
+      "reasons": [
+        "agents/interface.yaml 证据不足，跨平台接口不清晰。",
+        "manifest.json 证据不足，生命周期信息不完整。",
+        "目标平台证据不足。",
+        "入口文件未发现明显私有绝对路径。"
+      ]
+    },
+    "context_cost": {
+      "label": "上下文成本",
+      "score": 42,
+      "reasons": [
+        "入口约 2841 个词/字，references 约 8180 个词/字。",
+        "分数越高代表上下文成本越低。",
+        "上下文成本偏高，建议压缩入口或拆分 references。"
+      ]
+    }
+  },
+  "capability_profile": {
+    "archetype": "scaffold",
+    "task_family": "Skill workflow",
+    "maturity": "scaffold",
+    "trigger_strength": "手动触发 + description 路由",
+    "reuse_scope": "本地复用",
+    "matrix": {
+      "execution_certainty": 72,
+      "knowledge_density": 62
+    }
+  },
+  "principle_model": {
+    "nodes": [
+      {
+        "title": "意图澄清",
+        "body": "先确认真实任务、输入材料和交付结果。"
+      },
+      {
+        "title": "边界路由",
+        "body": "用 frontmatter description 决定是否触发，并写明相邻非目标。"
+      },
+      {
+        "title": "资产分层",
+        "body": "把入口、参考、脚本、评估和报告拆到各自目录，避免 SKILL.md 膨胀。"
+      },
+      {
+        "title": "证据回路",
+        "body": "通过评估、报告和复盘把真实使用反馈变成下一轮改进。"
+      },
+      {
+        "title": "漂移观察",
+        "body": "持续观察触发漂移、输出漂移和治理漂移。"
+      },
+      {
+        "title": "杠杆升级",
+        "body": "优先改边界、触发和一个最小自修复检查。"
+      }
+    ],
+    "layers": [
+      "入口层",
+      "参考层",
+      "脚本层",
+      "评估层",
+      "报告层"
+    ]
+  },
+  "contract_boundary": {
+    "trigger": {
+      "description": "Use this skill when the user wants a Chinese adult-oriented turn-based text GalGame GM with harem formation, freeform narrative roleplay, natural-escalation yellow-fiction text adventure, multi-character relationship drama, story memory, or novel export. Trigger on requests for 后宫养成, 后宫, 养成, 多女主, 多男后宫, 黄色爽文, 自然流YY文字游戏, 成人向文字冒险, 回合制文字冒险, GalGame, 后宫互动, 逐步升温剧情, 暧昧开局, 自定义身份卡, 文档记忆, 小说导出, 女性向剧情, or any Chinese freeform narrative game where the user wants adult consenting characters, gradual escalation, strong character routes, and long-running continuity. Use this skill even when the user does not name it explicitly but describes a multi-character adult Chinese interactive fiction with relationship memory and NSFW progression.",
+      "activation": "manual",
+      "execution": "inline",
+      "shell": "bash"
+    },
+    "inputs": [
+      "用户提供的工作流、提示词、文档、记录或散乱笔记",
+      "期望沉淀的复用场景、排除项、约束和质量标准"
+    ],
+    "outputs": [
+      "可路由的 SKILL.md",
+      "agents/interface.yaml 元数据",
+      "必要的 references、scripts、evals、reports 证据",
+      "结构化 Skill 目录，共 6 类关键资产。"
+    ],
+    "should_trigger": [
+      "用户说出类似需求时：Use this skill when the request matches: Use this skill when the user wants a Chinese adult-oriented turn-based text GalGame GM with harem formation, freeform narrative roleplay, natural-escalation yellow-fiction text adventure, multi-character relationship drama, story memory, or novel export. Trigger on requests for 后宫养成, 后宫, 养成, 多女主, 多男后宫, 黄色爽文, 自然流YY文字游戏, 成人向文字冒险, 回合制文字冒险, GalGame, 后宫互动, 逐步升温剧情, 暧昧开局, 自定义身份卡, 文档记忆, 小说导出, 女性向剧情, or any Chinese freeform narrative game where the user wants adult consenting characters, gradual escalation, strong character routes, and long-running continuity. Use this skill even when the user does not name it explicitly but describes a multi-character adult Chinese interactive fiction with relationship memory and NSFW progression.",
+      "已有原始资料，但还没有清晰输入、输出和后续迭代路径。"
+    ],
+    "should_not_trigger": [
+      "只需要一次性回答、没有复用价值的临时请求。",
+      "要求直接执行相邻任务，而不是沉淀或使用这个 Skill。",
+      "缺少必要事实且用户不允许澄清的场景。"
+    ],
+    "boundary_cards": [
+      {
+        "label": "Owned",
+        "body": "Use this skill when the user wants a Chinese adult-oriented turn-based text GalGame GM with harem formation, freeform narrative roleplay, natural-escalation yellow-fiction text adventure, multi-character relationship drama, story memory, or novel export. Trigger on requests for 后宫养成, 后宫, 养成, 多女主, 多男后宫, 黄色爽文, 自然流YY文字游戏, 成人向文字冒险, 回合制文字冒险, GalGame, 后宫互动, 逐步升温剧情, 暧昧开局, 自定义身份卡, 文档记忆, 小说导出, 女性向剧情, or any Chinese freeform narrative game where the user wants adult consenting characters, gradual escalation, strong character routes, and long-running continuity. Use this skill even when the user does not name it explicitly but describes a multi-character adult Chinese interactive fiction with relationship memory and NSFW progression."
+      },
+      {
+        "label": "Adjacent",
+        "body": "相邻任务需要先确认是否应转为独立 Skill。"
+      },
+      {
+        "label": "Excluded",
+        "body": "不替代人工事实核查，也不静默扩大职责。"
+      }
+    ]
+  },
+  "quality_review": {
+    "strengths": [
+      "触发面保持精简，并锚定在 frontmatter description。",
+      "长指导被拆到 references 中，入口文件可以保持轻量。",
+      "确定性辅助逻辑放在 scripts 中，而不是藏在提示词里。",
+      "包内包含可随 Skill 迁移的质量门禁或触发检查。"
+    ],
+    "gaps": [
+      "完整度需要补强：SKILL.md 已存在，是 Skill 的入口。",
+      "证据充分需要补强：证据不足：缺少 skill-ir.json, compiled_targets.json, intent-dialogue.json。",
+      "可迁移性需要补强：agents/interface.yaml 证据不足，跨平台接口不清晰。",
+      "上下文成本需要补强：入口约 2841 个词/字，references 约 8180 个词/字。"
+    ],
+    "recommendations": [
+      "先改触发边界，再扩展工作流。",
+      "只把重复且稳定的步骤沉淀为脚本。",
+      "每次升级后重新生成报告并检查分数原因。"
+    ],
+    "artifact_design": {
+      "design_system": "content-led editorial",
+      "highlights": []
+    },
+    "prompt_quality": {
+      "overall_quality_score": "n/a",
+      "highlights": []
+    },
+    "system_model": {
+      "stability": {},
+      "highlights": []
+    }
+  },
+  "risk_governance": {
+    "risks": [
+      {
+        "name": "误触发风险",
+        "impact": 3,
+        "probability": 2,
+        "signal": "frontmatter description 已存在，具备基础路由面。",
+        "response": "先补证据和边界，再增加包体复杂度。"
+      },
+      {
+        "name": "输出漂移风险",
+        "impact": 2,
+        "probability": 3,
+        "signal": "证据不足：缺少 skill-ir.json, compiled_targets.json, intent-dialogue.json。",
+        "response": "先补证据和边界，再增加包体复杂度。"
+      },
+      {
+        "name": "证据不足风险",
+        "impact": 3,
+        "probability": 3,
+        "signal": "证据不足：缺少 skill-ir.json, compiled_targets.json, intent-dialogue.json。",
+        "response": "先补证据和边界，再增加包体复杂度。"
+      },
+      {
+        "name": "包体膨胀风险",
+        "impact": 2,
+        "probability": 2,
+        "signal": "SKILL.md 约 2841 个词/字。",
+        "response": "先补证据和边界，再增加包体复杂度。"
+      },
+      {
+        "name": "跨平台迁移风险",
+        "impact": 3,
+        "probability": 3,
+        "signal": "agents/interface.yaml 证据不足，跨平台接口不清晰。",
+        "response": "先补证据和边界，再增加包体复杂度。"
+      }
+    ],
+    "risk_families": [],
+    "human_judgment_boundary": []
+  },
+  "world_class_readiness": {
+    "ready": false,
+    "decision": "not-generated",
+    "entry_count": 0,
+    "pending_count": 0,
+    "accepted_count": 0,
+    "external_pending_count": 0,
+    "human_pending_count": 0,
+    "source_check_count": 0,
+    "source_pass_count": 0,
+    "conclusion_zh": "未生成 world-class ledger；当前报告不会宣称世界级完成。",
+    "conclusion_en": "No world-class ledger was generated; this report does not claim world-class completion.",
+    "entries": []
+  },
+  "package_assets": {
+    "entries": [
+      {
+        "path": "SKILL.md",
+        "label": "Skill entrypoint",
+        "kind": "file",
+        "file_count": 1
+      },
+      {
+        "path": "README.md",
+        "label": "Human-readable usage guide",
+        "kind": "file",
+        "file_count": 1
+      },
+      {
+        "path": "references",
+        "label": "Extended guidance and reusable notes",
+        "kind": "folder",
+        "file_count": 6
+      },
+      {
+        "path": "scripts",
+        "label": "Deterministic helpers or local tooling",
+        "kind": "folder",
+        "file_count": 2
+      },
+      {
+        "path": "evals",
+        "label": "Trigger and quality checks",
+        "kind": "folder",
+        "file_count": 19
+      },
+      {
+        "path": "reports",
+        "label": "Generated evidence and overview artifacts",
+        "kind": "folder",
+        "file_count": 0
+      }
+    ],
+    "file_count": 29,
+    "folder_count": 4,
+    "distribution": [
+      {
+        "label": "SKILL.md",
+        "value": 1
+      },
+      {
+        "label": "README.md",
+        "value": 1
+      },
+      {
+        "label": "references",
+        "value": 6
+      },
+      {
+        "label": "scripts",
+        "value": 2
+      },
+      {
+        "label": "evals",
+        "value": 19
+      },
+      {
+        "label": "reports",
+        "value": 1
+      }
+    ]
+  },
+  "iteration_roadmap": {
+    "items": [
+      {
+        "title": "收紧触发",
+        "why": "先让 Skill 在正确场景被调用，再扩展资产。",
+        "actions": [
+          "增加正例、反例和近邻用例。",
+          "压缩 frontmatter description。"
+        ],
+        "unlocks": "更稳定的路由边界。"
+      }
+    ]
+  },
+  "report_contract": {
+    "schema_version": "2.0",
+    "html_report": "reports/skill-interpretation.html",
+    "language": "zh-CN",
+    "default_language": "zh-CN",
+    "languages": [
+      "zh-CN",
+      "en"
+    ],
+    "layout": "kami-white-audit-v2",
+    "nav_labels": [
+      "技能概述",
+      "总览指标",
+      "能力画像",
+      "原理结构",
+      "契约边界",
+      "质量评估",
+      "风险治理",
+      "包体资产",
+      "迭代路线"
+    ],
+    "nav_labels_en": [
+      "Overview",
+      "Metrics",
+      "Profile",
+      "Principle",
+      "Contract",
+      "Quality",
+      "Risk",
+      "Assets",
+      "Roadmap"
+    ],
+    "report_kind": "skill-interpretation",
+    "canonical_overview_report": "reports/skill-overview.html",
+    "json_report": "reports/skill-interpretation.json",
+    "purpose": "Explain the generated skill's role, principles, usage scenarios, trigger contract, inputs, outputs, quality evidence, risks, assets, highlights, and next upgrade directions."
+  },
+  "name": "velvet-ascent",
+  "title": "Velvet Ascent - 中文成人向后宫养成文字游戏引擎",
+  "display_name": "Velvet Ascent - 中文成人向后宫养成文字游戏引擎",
+  "description": "Use this skill when the user wants a Chinese adult-oriented turn-based text GalGame GM with harem formation, freeform narrative roleplay, natural-escalation yellow-fiction text adventure, multi-character relationship drama, story memory, or novel export. Trigger on requests for 后宫养成, 后宫, 养成, 多女主, 多男后宫, 黄色爽文, 自然流YY文字游戏, 成人向文字冒险, 回合制文字冒险, GalGame, 后宫互动, 逐步升温剧情, 暧昧开局, 自定义身份卡, 文档记忆, 小说导出, 女性向剧情, or any Chinese freeform narrative game where the user wants adult consenting characters, gradual escalation, strong character routes, and long-running continuity. Use this skill even when the user does not name it explicitly but describes a multi-character adult Chinese interactive fiction with relationship memory and NSFW progression.",
+  "logic_steps": [
+    "Understand the request",
+    "Execute the main task",
+    "Validate the result"
+  ],
+  "usage_steps": [
+    "Use this skill when the request matches: Use this skill when the user wants a Chinese adult-oriented turn-based text GalGame GM with harem formation, freeform narrative roleplay, natural-escalation yellow-fiction text adventure, multi-character relationship drama, story memory, or novel export. Trigger on requests for 后宫养成, 后宫, 养成, 多女主, 多男后宫, 黄色爽文, 自然流YY文字游戏, 成人向文字冒险, 回合制文字冒险, GalGame, 后宫互动, 逐步升温剧情, 暧昧开局, 自定义身份卡, 文档记忆, 小说导出, 女性向剧情, or any Chinese freeform narrative game where the user wants adult consenting characters, gradual escalation, strong character routes, and long-running continuity. Use this skill even when the user does not name it explicitly but describes a multi-character adult Chinese interactive fiction with relationship memory and NSFW progression."
+  ],
+  "package_map": [
+    {
+      "path": "SKILL.md",
+      "label": "Skill entrypoint",
+      "kind": "file",
+      "file_count": 1
+    },
+    {
+      "path": "README.md",
+      "label": "Human-readable usage guide",
+      "kind": "file",
+      "file_count": 1
+    },
+    {
+      "path": "references",
+      "label": "Extended guidance and reusable notes",
+      "kind": "folder",
+      "file_count": 6
+    },
+    {
+      "path": "scripts",
+      "label": "Deterministic helpers or local tooling",
+      "kind": "folder",
+      "file_count": 2
+    },
+    {
+      "path": "evals",
+      "label": "Trigger and quality checks",
+      "kind": "folder",
+      "file_count": 19
+    },
+    {
+      "path": "reports",
+      "label": "Generated evidence and overview artifacts",
+      "kind": "folder",
+      "file_count": 0
+    }
+  ],
+  "strengths": [
+    "触发面保持精简，并锚定在 frontmatter description。",
+    "长指导被拆到 references 中，入口文件可以保持轻量。",
+    "确定性辅助逻辑放在 scripts 中，而不是藏在提示词里。",
+    "包内包含可随 Skill 迁移的质量门禁或触发检查。"
+  ],
+  "scenarios": [
+    "用户说出类似需求时：Use this skill when the request matches: Use this skill when the user wants a Chinese adult-oriented turn-based text GalGame GM with harem formation, freeform narrative roleplay, natural-escalation yellow-fiction text adventure, multi-character relationship drama, story memory, or novel export. Trigger on requests for 后宫养成, 后宫, 养成, 多女主, 多男后宫, 黄色爽文, 自然流YY文字游戏, 成人向文字冒险, 回合制文字冒险, GalGame, 后宫互动, 逐步升温剧情, 暧昧开局, 自定义身份卡, 文档记忆, 小说导出, 女性向剧情, or any Chinese freeform narrative game where the user wants adult consenting characters, gradual escalation, strong character routes, and long-running continuity. Use this skill even when the user does not name it explicitly but describes a multi-character adult Chinese interactive fiction with relationship memory and NSFW progression.",
+    "已有原始资料，但还没有清晰输入、输出和后续迭代路径。"
+  ],
+  "trigger_contract": {
+    "description": "Use this skill when the user wants a Chinese adult-oriented turn-based text GalGame GM with harem formation, freeform narrative roleplay, natural-escalation yellow-fiction text adventure, multi-character relationship drama, story memory, or novel export. Trigger on requests for 后宫养成, 后宫, 养成, 多女主, 多男后宫, 黄色爽文, 自然流YY文字游戏, 成人向文字冒险, 回合制文字冒险, GalGame, 后宫互动, 逐步升温剧情, 暧昧开局, 自定义身份卡, 文档记忆, 小说导出, 女性向剧情, or any Chinese freeform narrative game where the user wants adult consenting characters, gradual escalation, strong character routes, and long-running continuity. Use this skill even when the user does not name it explicitly but describes a multi-character adult Chinese interactive fiction with relationship memory and NSFW progression.",
+    "activation": "manual",
+    "execution": "inline",
+    "shell": "bash"
+  },
+  "io_contract": {
+    "inputs": [
+      "用户提供的工作流、提示词、文档、记录或散乱笔记",
+      "期望沉淀的复用场景、排除项、约束和质量标准"
+    ],
+    "outputs": [
+      "可路由的 SKILL.md",
+      "agents/interface.yaml 元数据",
+      "必要的 references、scripts、evals、reports 证据",
+      "结构化 Skill 目录，共 6 类关键资产。"
+    ]
+  },
+  "principles": [
+    {
+      "title": "意图澄清",
+      "body": "先确认真实任务、输入材料和交付结果。"
+    },
+    {
+      "title": "边界路由",
+      "body": "用 frontmatter description 决定是否触发，并写明相邻非目标。"
+    },
+    {
+      "title": "资产分层",
+      "body": "把入口、参考、脚本、评估和报告拆到各自目录，避免 SKILL.md 膨胀。"
+    },
+    {
+      "title": "证据回路",
+      "body": "通过评估、报告和复盘把真实使用反馈变成下一轮改进。"
+    },
+    {
+      "title": "漂移观察",
+      "body": "持续观察触发漂移、输出漂移和治理漂移。"
+    },
+    {
+      "title": "杠杆升级",
+      "body": "优先改边界、触发和一个最小自修复检查。"
+    }
+  ],
+  "roadmap": [
+    {
+      "title": "收紧触发",
+      "why": "先让 Skill 在正确场景被调用，再扩展资产。",
+      "actions": [
+        "增加正例、反例和近邻用例。",
+        "压缩 frontmatter description。"
+      ],
+      "unlocks": "更稳定的路由边界。"
+    }
+  ],
+  "cards": [],
+  "introduction": [
+    "这份报告用于快速理解新生成 Skill 的定位、原理、触发边界和交付内容。",
+    "先确认重复任务、真实输入形态和可交付输出，再决定是否继续加 references、scripts 或 evals。",
+    "如果需求仍然模糊，优先回到 intent dialogue 收紧边界，再扩展包体结构。"
+  ],
+  "benchmark_highlights": [],
+  "skill_ir": {
+    "schema_version": "",
+    "source_path": "",
+    "target_count": 0,
+    "trigger_samples": 0,
+    "output_eval_cases": 0
+  },
+  "compiled_targets": {
+    "ok": false,
+    "schema_version": "",
+    "summary": {},
+    "targets": [],
+    "failures": [],
+    "warnings": []
+  },
+  "output_quality": {},
+  "output_execution": {
+    "ok": false,
+    "summary": {},
+    "runner": {},
+    "failures": []
+  },
+  "output_blind_review": {
+    "summary": {},
+    "seed": "",
+    "pair_count": 0,
+    "answer_key_separate": false
+  },
+  "output_review_kit": {
+    "ok": false,
+    "summary": {},
+    "artifacts": {},
+    "failures": []
+  },
+  "output_review_adjudication": {
+    "ok": false,
+    "summary": {},
+    "reviewer": "",
+    "reviewed_at": "",
+    "failures": []
+  },
+  "benchmark_reproducibility": {
+    "ok": false,
+    "summary": {},
+    "commit": "",
+    "missing_artifacts": [],
+    "limitations": []
+  },
+  "runtime_conformance": {},
+  "runtime_permissions": {
+    "ok": false,
+    "summary": {},
+    "expected_capabilities": [],
+    "targets": [],
+    "failures": []
+  },
+  "trust_security": {},
+  "skill_atlas": {},
+  "registry_distribution": {
+    "ok": false,
+    "package": {},
+    "failures": [],
+    "warnings": []
+  },
+  "package_verification": {
+    "ok": false,
+    "summary": {},
+    "failures": [],
+    "warnings": []
+  },
+  "install_simulation": {
+    "ok": false,
+    "summary": {},
+    "failures": [],
+    "warnings": []
+  },
+  "upgrade_check": {
+    "ok": false,
+    "summary": {},
+    "upgrade_diff": {},
+    "release_notes": [],
+    "failures": [],
+    "warnings": []
+  },
+  "adoption_drift": {
+    "ok": false,
+    "summary": {},
+    "next_iteration_candidates": [],
+    "privacy_contract": {},
+    "failures": []
+  },
+  "review_waivers": {
+    "ok": false,
+    "summary": {},
+    "policy": {},
+    "failures": [],
+    "warnings": []
+  },
+  "review_annotations": {
+    "ok": false,
+    "summary": {},
+    "annotations": [],
+    "failures": []
+  },
+  "world_class_evidence_plan": {
+    "ok": false,
+    "summary": {},
+    "tasks": [],
+    "source_audit": {}
+  },
+  "world_class_evidence_ledger": {
+    "ok": false,
+    "summary": {},
+    "entries": [],
+    "source_plan": {}
+  },
+  "synthesis_highlights": [],
+  "artifact_design": {
+    "design_system": "content-led editorial",
+    "highlights": []
+  },
+  "prompt_quality": {
+    "overall_quality_score": "n/a",
+    "highlights": []
+  },
+  "system_model": {
+    "stability": {},
+    "highlights": []
+  },
+  "metadata": {
+    "canonical_format": "agent-skills",
+    "targets": [],
+    "maturity_tier": "scaffold",
+    "skill_archetype": "scaffold",
+    "updated_at": "2026-07-13"
+  },
+  "interpretation_contract": {
+    "schema_version": "2.0",
+    "source_model": "skill-overview-v2",
+    "source_model_reused": true,
+    "overview_report": "reports/skill-overview.html",
+    "html_report": "reports/skill-interpretation.html",
+    "json_report": "reports/skill-interpretation.json",
+    "default_language": "zh-CN",
+    "languages": [
+      "zh-CN",
+      "en"
+    ],
+    "includes": [
+      "skill role",
+      "principles",
+      "usage scenarios",
+      "trigger contract",
+      "inputs and outputs",
+      "quality evidence",
+      "risk governance",
+      "package assets",
+      "highlights",
+      "upgrade roadmap"
+    ]
+  }
+}

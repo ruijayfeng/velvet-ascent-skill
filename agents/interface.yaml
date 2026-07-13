@@ -1,0 +1,120 @@
+# Velvet Ascent - Agent Interface Metadata
+# Platform-neutral metadata for cross-platform compatibility
+
+interface:
+  display_name: "Velvet Ascent - 中文成人向后宫养成文字游戏引擎"
+  short_description: "回合制文字 GalGame GM，支持后宫养成、欲望图谱、多女主路线、文档记忆和小说导出"
+  default_prompt: "我想玩一个中文成人向后宫养成文字游戏"
+
+# Trigger surface
+triggers:
+  keywords:
+    - 后宫养成
+    - 后宫
+    - 养成
+    - 多女主
+    - 多男后宫
+    - 黄色爽文
+    - 自然流YY文字游戏
+    - 成人向文字冒险
+    - 回合制文字冒险
+    - GalGame
+    - 后宫互动
+    - 逐步升温剧情
+    - 暧昧开局
+    - 自定义身份卡
+    - 文档记忆
+    - 小说导出
+    - 女性向剧情
+  patterns:
+    - ".*后宫.*养成.*"
+    - ".*成人.*文字.*游戏.*"
+    - ".*GalGame.*中文.*"
+    - ".*多女主.*剧情.*"
+
+# Input contract
+inputs:
+  required: []
+  optional:
+    - name: theme
+      description: "主题/世界观"
+      type: string
+      examples: ["现代都市", "玄幻", "末世", "娱乐圈", "职场", "架空王朝"]
+    - name: protagonist
+      description: "主角身份"
+      type: string
+      examples: ["普通开局", "隐藏天赋", "重生", "系统觉醒"]
+    - name: direction
+      description: "剧情方向"
+      type: string
+      enum: ["male", "female"]
+      default: "male"
+    - name: nsfw_level
+      description: "NSFW 档位"
+      type: integer
+      enum: [0, 1, 2, 3, 4]
+      default: 2
+    - name: memory_mode
+      description: "记忆模式"
+      type: string
+      enum: ["temp", "document", "stage", "novel"]
+      default: "temp"
+
+# Output contract
+outputs:
+  primary: "结构化的游戏回合输出，包含标题、状态、主线推进、场景扰动、关系变化和行动选项"
+  format: "markdown"
+  sections:
+    - 标题
+    - 当前状态
+    - 主线推进
+    - 欲望维度注记
+    - 场景扰动
+    - 关系/状态变化
+    - 行动选项
+
+# Boundaries
+exclusions:
+  - "不包含未成年人内容"
+  - "不包含非自愿/强迫内容"
+  - "不包含非法性行为内容"
+  - "不处理纯文学创作（无游戏机制）"
+  - "不处理实时多人在线游戏"
+
+# Quality bar
+quality:
+  coherence: "时间线和角色关系必须保持一致"
+  character_differentiation: "角色必须通过 6 维差异化矩阵"
+  escalation_control: "NSFW 级别受 level × stage 约束"
+  memory_persistence: "支持文档记忆和小说导出"
+
+# Compatibility
+compatibility:
+  canonical_format: "markdown"
+  activation:
+    mode: "trigger"
+  execution:
+    context: "inline"
+    shell: "bash"
+  trust:
+    source_tier: "local"
+    remote_inline_execution: "forbid"
+    remote_metadata_policy: "local-only"
+  adapter_targets:
+    - openai
+    - claude
+    - generic
+    - vscode
+  degradation:
+    openai:
+      - "SKILL.md 内容直接作为 system prompt"
+      - "references/ 内容按需加载"
+    claude:
+      - "SKILL.md 内容直接作为 system prompt"
+      - "references/ 内容按需加载"
+    generic:
+      - "SKILL.md 内容直接作为 system prompt"
+      - "references/ 内容按需加载"
+    vscode:
+      - "SKILL.md 内容直接作为 system prompt"
+      - "references/ 内容按需加载"

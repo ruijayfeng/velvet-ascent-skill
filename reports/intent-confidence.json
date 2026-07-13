@@ -1,0 +1,79 @@
+{
+  "score": 30,
+  "band": "low",
+  "gate_passed": false,
+  "strengths": [
+    "The recurring job is concrete enough to anchor the package."
+  ],
+  "gaps": [
+    {
+      "key": "real_inputs",
+      "label": "Real inputs are missing",
+      "reason": "Without real inputs, it is hard to choose assets, scripts, or examples.",
+      "severity": "high"
+    },
+    {
+      "key": "primary_output",
+      "label": "Primary output is missing",
+      "reason": "The package does not yet know what it must hand back.",
+      "severity": "high"
+    },
+    {
+      "key": "exclusions",
+      "label": "Near-neighbor exclusions are missing",
+      "reason": "The route may blur into nearby requests without an exclusion list.",
+      "severity": "high"
+    },
+    {
+      "key": "constraints",
+      "label": "Constraints are missing",
+      "reason": "The package does not yet know which tradeoffs matter most.",
+      "severity": "high"
+    },
+    {
+      "key": "standards",
+      "label": "Quality bar is implied, not explicit",
+      "reason": "The first evaluation target is still underspecified.",
+      "severity": "medium"
+    }
+  ],
+  "follow_up_questions": [
+    {
+      "slot": "real_inputs",
+      "question": "What material will people actually hand to this skill in practice?",
+      "why": "Real input shape decides whether references, scripts, or examples are needed.",
+      "list": true,
+      "label": "Real inputs are missing",
+      "severity": "high"
+    },
+    {
+      "slot": "primary_output",
+      "question": "What finished hand-back should this skill return so the next person can keep moving?",
+      "why": "The output is the anchor for package design and review.",
+      "list": false,
+      "label": "Primary output is missing",
+      "severity": "high"
+    },
+    {
+      "slot": "exclusions",
+      "question": "What nearby requests should this skill clearly leave out so the boundary stays clean?",
+      "why": "Exclusions are the fastest route to better trigger quality.",
+      "list": true,
+      "label": "Near-neighbor exclusions are missing",
+      "severity": "high"
+    }
+  ],
+  "anchor_sentence": "Use this skill when the user wants a Chinese adult-oriented turn-based text GalGame GM with harem formation, freeform narrative roleplay, natural-escalation yellow-fiction text adventure, multi-character relationship drama, story memory, or novel export. Trigger on requests for 后宫养成, 后宫, 养成, 多女主, 多男后宫, 黄色爽文, 自然流YY文字游戏, 成人向文字冒险, 回合制文字冒险, GalGame, 后宫互动, 逐步升温剧情, 暧昧开局, 自定义身份卡, 文档记忆, 小说导出, 女性向剧情, or any Chinese freeform narrative game where the user wants adult consenting characters, gradual escalation, strong character routes, and long-running continuity. Use this skill even when the user does not name it explicitly but describes a multi-character adult Chinese interactive fiction with relationship memory and NSFW progression.",
+  "recommended_action": "Pause before deep authoring and close the highest-leverage gaps first.",
+  "context": {
+    "job": "Use this skill when the user wants a Chinese adult-oriented turn-based text GalGame GM with harem formation, freeform narrative roleplay, natural-escalation yellow-fiction text adventure, multi-character relationship drama, story memory, or novel export. Trigger on requests for 后宫养成, 后宫, 养成, 多女主, 多男后宫, 黄色爽文, 自然流YY文字游戏, 成人向文字冒险, 回合制文字冒险, GalGame, 后宫互动, 逐步升温剧情, 暧昧开局, 自定义身份卡, 文档记忆, 小说导出, 女性向剧情, or any Chinese freeform narrative game where the user wants adult consenting characters, gradual escalation, strong character routes, and long-running continuity. Use this skill even when the user does not name it explicitly but describes a multi-character adult Chinese interactive fiction with relationship memory and NSFW progression.",
+    "real_inputs": [],
+    "primary_output": "",
+    "description": "Use this skill when the user wants a Chinese adult-oriented turn-based text GalGame GM with harem formation, freeform narrative roleplay, natural-escalation yellow-fiction text adventure, multi-character relationship drama, story memory, or novel export. Trigger on requests for 后宫养成, 后宫, 养成, 多女主, 多男后宫, 黄色爽文, 自然流YY文字游戏, 成人向文字冒险, 回合制文字冒险, GalGame, 后宫互动, 逐步升温剧情, 暧昧开局, 自定义身份卡, 文档记忆, 小说导出, 女性向剧情, or any Chinese freeform narrative game where the user wants adult consenting characters, gradual escalation, strong character routes, and long-running continuity. Use this skill even when the user does not name it explicitly but describes a multi-character adult Chinese interactive fiction with relationship memory and NSFW progression.",
+    "exclusions": [],
+    "constraints": [],
+    "standards": [],
+    "correction": "",
+    "user_references": []
+  }
+}

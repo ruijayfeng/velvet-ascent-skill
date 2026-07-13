@@ -1,0 +1,44 @@
+{
+  "name": "velvet-ascent",
+  "version": "1.0.0",
+  "description": "中文成人向后宫养成文字游戏引擎 - 回合制 GalGame GM，支持多女主、欲望图谱、后宫养成阶段、文档记忆和小说导出",
+  "author": "ruijayfeng",
+  "owner": "ruijayfeng",
+  "license": "MIT",
+  "category": "creative",
+  "status": "active",
+  "maturity_tier": "production",
+  "lifecycle_stage": "production",
+  "review_cadence": "monthly",
+  "tags": [
+    "galgame",
+    "harem",
+    "adult",
+    "text-adventure",
+    "roleplay",
+    "chinese",
+    "interactive-fiction"
+  ],
+  "platforms": [
+    "openai",
+    "claude",
+    "generic"
+  ],
+  "entry_point": "SKILL.md",
+  "references": [
+    "references/character-engine.md",
+    "references/character-fetish.md",
+    "references/narrative-engine.md",
+    "references/nsfw-style-guide.md",
+    "references/memory-system.md",
+    "references/gm-contract.md"
+  ],
+  "scripts": [
+    "scripts/run-assertions.js"
+  ],
+  "evals": [
+    "evals/evals.json"
+  ],
+  "created_at": "2026-07-13",
+  "updated_at": "2026-07-13"
+}
